@@ -92,7 +92,7 @@ Las contraseñas se guardan **cifradas con bcrypt** en la base de datos.
 
 | N° de Cliente | Contraseña | Titular                  |
 |---------------|------------|--------------------------|
-| `73193206`    | `MRjhey10` | Nicole Valderrama Bravo  |
+| `73193206`    | `MRjhey10` | Jheymy Barboza Mondragon |
 | `88888888`    | `win2026`  | Inés Valderrama          |
 
 El formulario de login viene prellenado con el primer cliente.

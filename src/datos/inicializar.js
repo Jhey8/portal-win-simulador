@@ -78,7 +78,7 @@ const PREGUNTAS = [
 const CLIENTES = [
   {
     numeroCliente: '73193206', dni: '72458913', contrasena: 'MRjhey10',
-    nombre: 'Nicole Valderrama Bravo', telefono: '+51 942231107', correo: 'jheymybm@gmail.com',
+    nombre: 'Jheymy Barboza Mondragon', telefono: '+51 942231107', correo: 'jheymybm@gmail.com',
     servicios: [['Internet Fibra 300 Mbps', 'Activo'], ['WIN TV Plus', 'Activo']],
     notificaciones: [['Tu recibo de Junio ha sido facturado con éxito.', 0], ['Mantenimiento programado en tu zona para el 15/07/2026.', 0], ['¡Bienvenido a tu nuevo portal de autogestión!', 1]]
   },

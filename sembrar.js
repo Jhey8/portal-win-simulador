@@ -6,7 +6,7 @@ const clientesDemo = [
     numeroCliente: '73193206',
     dni: '72458913',
     contrasena: 'MRjhey10',
-    nombre: 'Nicole Valderrama Bravo',
+    nombre: 'Jheymy Barboza Mondragon',
     telefono: '+51 942231107',
     correo: 'jheymybm@gmail.com',
     servicios: [
