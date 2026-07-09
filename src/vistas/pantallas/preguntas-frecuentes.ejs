@@ -1,0 +1,38 @@
+<section id="preguntas-frecuentes" class="vista-pantalla">
+  <h2 class="seccion-titulo">Preguntas Frecuentes</h2>
+
+  <div class="buscador-preguntas">
+    <div class="control-con-icono">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="buscador-faq" class="control-formulario" placeholder="¿Tienes alguna pregunta sobre el proceso de baja? Escríbela aquí...">
+    </div>
+  </div>
+
+  <div id="lista-faq" class="lista-faq"></div>
+
+  <div class="tarjeta" style="margin-top: 30px; display:flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap:20px;">
+    <div>
+      <h3 style="font-size:16px; font-weight:700; margin-bottom:5px;">¿No encontraste lo que buscabas?</h3>
+      <p style="color:var(--gris-texto-secundario); font-size:13px;">Escríbenos directamente por nuestro canal exclusivo de WhatsApp de bajas.</p>
+    </div>
+    <a href="https://wa.me/51987654321" target="_blank" class="btn" style="background-color:#25D366; color:white; font-weight:700; box-shadow:0 4px 15px rgba(37, 211, 102, 0.2);">
+      <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.003 5.37 5.378.002 12.007.002c3.212.001 6.231 1.253 8.5 3.527 2.27 2.274 3.52 5.298 3.518 8.506-.004 6.628-5.38 11.999-12.008 11.999-2.003-.001-3.973-.496-5.735-1.442L0 24zm6.59-4.846c1.6.95 3.1 1.4 4.8 1.4 5.5 0 10-4.5 10-10s-4.5-10-10-10-10 4.5-10 10c0 1.9.5 3.7 1.4 5.3L1.9 22.1l4.7-1.9zm11.3-4.9c-.3-.2-1.7-1-2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1.1-1 1.3-.2.2-.4.2-.7 0-.3-.2-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5C10.9 9.3 10 7.2 9.7 6.6c-.3-.8-.7-.7-1-.7h-.7c-.3 0-.7.1-1 .5C6.7 6.8 6 7.9 6 10.1c0 2.2 1.6 4.4 1.8 4.7.2.3 3.1 4.8 7.6 6.7 1.1.5 1.9.7 2.5.9 1.1.3 2.1.3 2.9.2.9-.1 2-1 2.3-1.9.3-.9.3-1.7.2-1.9-.1-.2-.3-.3-.7-.5z"/></svg>
+      Contactar por WhatsApp
+    </a>
+  </div>
+
+  <div class="tarjeta" style="margin-top:20px; display:flex; justify-content:space-between; align-items:center; padding: 20px 30px;">
+    <div style="display:flex; align-items:center; gap:15px;">
+      <svg viewBox="0 0 24 24" style="width:24px; height:24px; fill:var(--naranja-primario);"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+      <div>
+        <h4 style="font-size:14px; font-weight:700;">Recibe notificaciones automáticas</h4>
+        <p style="color:var(--gris-texto-secundario); font-size:12px;">Por correo y WhatsApp sobre el estado de tus solicitudes.</p>
+      </div>
+    </div>
+    <label style="position: relative; display: inline-block; width: 50px; height: 26px; cursor:pointer;">
+      <input type="checkbox" checked style="opacity: 0; width: 0; height: 0;" onchange="notificar('Preferencia de notificación actualizada.', 'exito')">
+      <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--naranja-primario); transition: .4s; border-radius: 34px;"></span>
+      <span style="position: absolute; content: ''; height: 18px; width: 18px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; transform: translateX(24px);"></span>
+    </label>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+<section id="realizar-pagos" class="vista-pantalla">
+  <div class="cabecera-con-retorno">
+    <button class="btn-retorno" title="Volver al menú principal">
+      <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    </button>
+    <h2 class="seccion-titulo" style="margin-bottom:0;">Realizar un pago</h2>
+  </div>
+
+  <div class="tarjeta" style="max-width:520px;">
+    <div style="text-align:center; padding-bottom:20px; border-bottom:1px solid var(--gris-borde);">
+      <span style="color:var(--gris-texto-secundario); font-size:14px;">Monto pendiente por pagar</span>
+      <h1 style="font-size:40px; font-weight:800; color:var(--naranja-primario); margin-top:6px;">S/ 79.00</h1>
+      <span style="color:var(--gris-texto-secundario); font-size:13px;">Recibo de Julio 2026 · Vence el 10/08/2026</span>
+    </div>
+
+    <div class="grupo-formulario" style="margin-top:24px;">
+      <label>Método de pago</label>
+      <select class="control-formulario">
+        <option>Tarjeta de crédito / débito</option>
+        <option>Yape / Plin</option>
+        <option>Banca por internet</option>
+      </select>
+    </div>
+
+    <button class="btn btn-primario" style="width:100%; height:50px; margin-top:24px;"
+      onclick="notificar('¡Pago simulado con éxito! (Prototipo)', 'exito')">
+      Pagar S/ 79.00
+    </button>
+    <p style="text-align:center; color:var(--gris-texto-secundario); font-size:12px; margin-top:14px;">
+      Pago seguro y encriptado. Este es un entorno de demostración.
+    </p>
+  </div>
+</section>

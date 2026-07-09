@@ -1,0 +1,45 @@
+<section id="confirmacion-automatica" class="vista-pantalla">
+  <div class="tarjeta tarjeta-exito">
+    <div class="check-animado">
+      <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+    </div>
+    <h2>¡Solicitud registrada exitosamente!</h2>
+    <p>Hemos recibido correctamente tu trámite y ya se encuentra en nuestro sistema.</p>
+
+    <div class="detalles-confirmacion">
+      <div class="fila-detalle">
+        <div class="detalle-etiqueta">Código de solicitud:</div>
+        <div id="conf-ticket" class="detalle-valor" style="color: var(--naranja-primario);">WIN-2026-000</div>
+      </div>
+      <div class="fila-detalle">
+        <div class="detalle-etiqueta">Estado actual:</div>
+        <div><span id="conf-estado" class="etiqueta-estado recibido">Solicitud recibida</span></div>
+      </div>
+      <div class="fila-detalle">
+        <div class="detalle-etiqueta">Tiempo de atención estimado:</div>
+        <div class="detalle-valor">24 horas hábiles</div>
+      </div>
+      <div class="fila-detalle">
+        <div class="detalle-etiqueta">Fecha de registro:</div>
+        <div id="conf-fecha" class="detalle-valor">-</div>
+      </div>
+    </div>
+
+    <h4 style="font-size:13px; font-weight:700; color:var(--gris-texto-secundario); margin-bottom:10px;">Te enviaremos actualizaciones automáticas por:</h4>
+    <div class="canales-notificaciones">
+      <div class="canal-item">
+        <svg fill="#25D366" viewBox="0 0 24 24" width="20" height="20"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.003 5.37 5.378.002 12.007.002c3.212.001 6.231 1.253 8.5 3.527 2.27 2.274 3.52 5.298 3.518 8.506-.004 6.628-5.38 11.999-12.008 11.999-2.003-.001-3.973-.496-5.735-1.442L0 24zm6.59-4.846c1.6.95 3.1 1.4 4.8 1.4 5.5 0 10-4.5 10-10s-4.5-10-10-10-10 4.5-10 10c0 1.9.5 3.7 1.4 5.3L1.9 22.1l4.7-1.9zm11.3-4.9c-.3-.2-1.7-1-2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1.1-1 1.3-.2.2-.4.2-.7 0-.3-.2-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5C10.9 9.3 10 7.2 9.7 6.6c-.3-.8-.7-.7-1-.7h-.7c-.3 0-.7.1-1 .5C6.7 6.8 6 7.9 6 10.1c0 2.2 1.6 4.4 1.8 4.7.2.3 3.1 4.8 7.6 6.7 1.1.5 1.9.7 2.5.9 1.1.3 2.1.3 2.9.2.9-.1 2-1 2.3-1.9.3-.9.3-1.7.2-1.9-.1-.2-.3-.3-.7-.5z"/></svg>
+        WhatsApp
+      </div>
+      <div class="canal-item">
+        <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        Correo electrónico
+      </div>
+    </div>
+
+    <div style="display:flex; gap:16px;">
+      <button class="btn btn-secundario btn-volver-inicio">Volver al menú</button>
+      <button class="btn btn-primario" onclick="window.appPortal.navegarA('seguimiento-solicitud')">Ir a mis solicitudes</button>
+    </div>
+  </div>
+</section>

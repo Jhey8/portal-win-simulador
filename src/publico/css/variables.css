@@ -1,0 +1,41 @@
+:root {
+
+  --naranja-primario: #FF5A00;
+  --naranja-brillante: #F34B00;
+  --naranja-suave: #FFF0E6;
+  --naranja-borde: #FFD9C2;
+
+  --blanco: #FFFFFF;
+  --gris-fondo: #F9F6F0;
+  --gris-borde: #E5E5E5;
+  --gris-texto-principal: #2C2C2C;
+  --gris-texto-secundario: #555555;
+  --gris-texto-deshabilitado: #999999;
+  --gris-fondo-card: #FFFFFF;
+
+  --color-exito: #2E7D32;
+  --color-exito-fondo: #E8F5E9;
+  --color-exito-borde: #C8E6C9;
+
+  --color-advertencia: #D32F2F;
+  --color-advertencia-fondo: #FFEBEE;
+  --color-advertencia-borde: #FFCDD2;
+
+  --color-info: #0288D1;
+  --color-info-fondo: #E1F5FE;
+  --color-info-borde: #B3E5FC;
+
+  --fuente-principal: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --radio-borde-grande: 14px;
+  --radio-borde-mediano: 10px;
+  --radio-borde-chico: 6px;
+
+  --sombra-premium: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --sombra-hover: 0 15px 35px rgba(255, 90, 0, 0.12);
+  --sombra-card: 0 4px 20px rgba(0, 0, 0, 0.03);
+  --sombra-boton: 0 4px 15px rgba(255, 90, 0, 0.2);
+
+  --transicion-rapida: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transicion-suave: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

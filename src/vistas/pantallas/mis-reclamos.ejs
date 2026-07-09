@@ -1,0 +1,39 @@
+<section id="mis-reclamos" class="vista-pantalla">
+  <div class="cabecera-con-retorno">
+    <button class="btn-retorno" title="Volver al menú principal">
+      <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    </button>
+    <h2 class="seccion-titulo" style="margin-bottom:0;">Mis reclamos</h2>
+  </div>
+
+  <div class="tarjeta" style="padding:0; overflow:hidden; margin-bottom:20px;">
+    <table class="tabla-simple">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Asunto</th>
+          <th>Fecha</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="admin-codigo"><strong>REC-2026-014</strong></td>
+          <td>Intermitencia en la conexión</td>
+          <td>02/07/2026</td>
+          <td><span class="etiqueta-estado en-proceso">En atención</span></td>
+        </tr>
+        <tr>
+          <td><strong>REC-2026-009</strong></td>
+          <td>Consulta sobre facturación</td>
+          <td>18/06/2026</td>
+          <td><span class="etiqueta-estado completado">Resuelto</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <button class="btn btn-primario" onclick="notificar('Formulario de nuevo reclamo (Prototipo).', 'info')">
+    + Registrar nuevo reclamo
+  </button>
+</section>

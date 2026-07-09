@@ -1,0 +1,43 @@
+<section id="constancia-cancelacion" class="vista-pantalla">
+  <div class="tarjeta tarjeta-constancia">
+    <div class="check-animado" style="background-color: var(--color-exito-fondo); border: 2px solid var(--color-exito-borde);">
+      <svg viewBox="0 0 24 24" fill="var(--color-exito)" width="40" height="40"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+    </div>
+    <h2 style="color: var(--color-exito); font-weight:800;">Cancelación Completada</h2>
+    <p style="margin-bottom:10px;">Tu servicio de internet de WIN ha sido dado de baja exitosamente de nuestro sistema.</p>
+
+    <div class="constancia-detalles">
+      <div class="fila-detalle">
+        <div class="detalle-etiqueta">Código de solicitud:</div>
+        <div id="const-ticket" class="detalle-valor">WIN-2026-000</div>
+      </div>
+      <div class="fila-detalle">
+        <div class="detalle-etiqueta">Fecha de finalización:</div>
+        <div id="const-fecha" class="detalle-valor">-</div>
+      </div>
+      <div class="fila-detalle">
+        <div class="detalle-etiqueta">Estado actual:</div>
+        <div><span id="const-estado" class="etiqueta-estado completado">Cancelación completada</span></div>
+      </div>
+    </div>
+
+    <div class="alerta alerta-exito" style="margin-bottom: 25px; text-align: left; width: 100%;">
+      <svg class="alerta-icono" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+      <div>
+        <strong>Respaldo de baja oficial:</strong> Ya no se generarán cobros extras de facturación por este servicio a partir de la fecha. Puedes descargar tu documento oficial ahora.
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px; width:100%;">
+      <a id="btn-descargar-pdf" href="#" class="btn btn-primario" style="height: 50px;">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+        Descarga constancia (PDF)
+      </a>
+      <button class="btn btn-secundario btn-volver-inicio" style="height: 50px;">Volver al inicio</button>
+    </div>
+
+    <div style="margin-top:20px; font-size:12px; color:var(--gris-texto-secundario);">
+      También hemos enviado una copia de la constancia digital a tu correo electrónico y a tu número de WhatsApp registrado.
+    </div>
+  </div>
+</section>

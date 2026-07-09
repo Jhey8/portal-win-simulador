@@ -1,0 +1,35 @@
+<section id="seguimiento-solicitud" class="vista-pantalla">
+  <div class="cabecera-con-retorno">
+    <button class="btn-retorno" title="Volver al menú principal">
+      <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    </button>
+    <h2 class="seccion-titulo" style="margin-bottom:0;">Seguimiento de solicitud</h2>
+  </div>
+
+  <div class="tarjeta tarjeta-seguimiento">
+    <div class="cabecera-seguimiento">
+      <div>
+        <span style="color:var(--gris-texto-secundario); font-size:13px; font-weight:500;">Código de solicitud:</span>
+        <h3 id="seg-ticket" style="color: var(--naranja-primario); margin-top:2px;">WIN-2026-000</h3>
+      </div>
+      <div style="text-align: right;">
+        <span style="color:var(--gris-texto-secundario); font-size:13px; font-weight:500; display:block; margin-bottom:4px;">Estado actual:</span>
+        <span id="seg-estado-badge" class="etiqueta-estado en-proceso">En proceso</span>
+      </div>
+    </div>
+
+    <div id="linea-progreso-seguimiento" class="linea-progreso-seguimiento"></div>
+
+    <div id="seg-alerta-vencimiento" class="alerta alerta-advertencia" style="margin-top: 30px; display: none;">
+      <svg class="alerta-icono" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+      <div>
+        <strong>¡Atención! Tiempo de resolución próximo a expirar.</strong><br>
+        Tu solicitud está en la última fase de validación técnica. Estaremos notificándote en los próximos minutos el estado final de la baja.
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: flex-end; margin-top: 30px; border-top: 1px solid var(--gris-borde); padding-top: 20px;">
+      <button class="btn btn-secundario btn-volver-inicio">Volver al menú principal</button>
+    </div>
+  </div>
+</section>

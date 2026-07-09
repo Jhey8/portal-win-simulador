@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WIN Internet - Panel de Administrador</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/ui.css">
+</head>
+<body>
+
+  <section id="admin-login" class="admin-login-pantalla">
+    <div class="admin-login-caja">
+      <div class="admin-logo">win <span>INTERNET</span></div>
+      <h1>Panel de Administrador</h1>
+      <p class="admin-subtitulo">Gestión interna de solicitudes de baja</p>
+
+      <div id="admin-error" class="admin-alerta" style="display:none;"></div>
+
+      <form id="admin-form-login">
+        <label for="admin-usuario">Usuario</label>
+        <input type="text" id="admin-usuario" placeholder="Ej. admin" required value="admin" autocomplete="username">
+
+        <label for="admin-contrasena">Contraseña</label>
+        <input type="password" id="admin-contrasena" placeholder="Tu contraseña" required value="admin2026" autocomplete="current-password">
+
+        <button type="submit" class="admin-btn admin-btn-primario">Ingresar</button>
+      </form>
+      <a href="/" class="admin-enlace-volver">&larr; Volver al portal del cliente</a>
+    </div>
+  </section>
+
+  <section id="admin-panel" style="display:none;">
+    <header class="admin-cabecera">
+      <div class="admin-logo">win <span>INTERNET</span> <span class="admin-logo-sufijo">- Panel admin</span></div>
+      <div class="admin-cabecera-acciones">
+        <span id="admin-nombre">Administrador</span>
+        <button id="admin-btn-refrescar" class="admin-btn admin-btn-secundario">Refrescar</button>
+        <button id="admin-btn-salir" class="admin-btn admin-btn-enlace">Cerrar sesión</button>
+      </div>
+    </header>
+
+    <main class="admin-contenido">
+      <h2>Solicitudes de cancelación</h2>
+      <p class="admin-ayuda">Atiende cada solicitud avanzando su estado. El cliente verá el cambio reflejado en su portal.</p>
+
+      <div class="admin-tabla-envoltura">
+        <table class="admin-tabla">
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>N° Cliente</th>
+              <th>Código</th>
+              <th>Motivo</th>
+              <th>Estado actual</th>
+              <th>Registrada</th>
+              <th>Atender (cambiar estado)</th>
+            </tr>
+          </thead>
+          <tbody id="admin-tabla-body">
+
+          </tbody>
+        </table>
+      </div>
+      <div id="admin-vacio" class="admin-vacio" style="display:none;">
+        No hay solicitudes de cancelación registradas todavía.
+      </div>
+    </main>
+  </section>
+
+  <script src="/js/ui.js"></script>
+  <script type="module" src="/js/admin.js"></script>
+</body>
+</html>

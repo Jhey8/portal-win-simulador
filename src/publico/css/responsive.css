@@ -1,0 +1,55 @@
+.btn-menu-movil {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--gris-texto-principal);
+  padding: 6px;
+  align-items: center;
+  justify-content: center;
+}
+.btn-menu-movil svg { width: 26px; height: 26px; fill: currentColor; }
+
+.cabecera-inicio {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#overlay-movil {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 99;
+}
+
+@media (max-width: 992px) {
+  .btn-menu-movil { display: inline-flex; }
+
+  #contenedor-aplicacion.autenticado #overlay-movil.visible { display: block; }
+
+  .pantalla-login { flex-direction: column; }
+  .login-banner { display: none; }
+  .login-formulario-seccion {
+    flex: 1;
+    padding: 40px 24px;
+    min-height: 100vh;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  #contenedor-aplicacion.autenticado #cabecera-portal { padding: 0 16px; height: 70px; }
+  #contenedor-aplicacion.autenticado #area-contenido { padding: 20px 16px; }
+
+  .saludo-usuario h2 { font-size: 16px; }
+  .saludo-usuario span { font-size: 12px; }
+
+  .seccion-titulo { font-size: 20px; }
+
+  .cabecera-perfil .btn-enlace { font-size: 13px; }
+
+  .acciones-formulario { flex-direction: column-reverse; gap: 10px; }
+  .acciones-formulario .btn { width: 100%; }
+}

@@ -1,0 +1,103 @@
+<section id="solicitud-cancelacion" class="vista-pantalla">
+  <div class="cabecera-con-retorno">
+    <button class="btn-retorno" title="Volver al menú principal">
+      <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    </button>
+    <h2 class="seccion-titulo" style="margin-bottom:0;">Solicitud de cancelación</h2>
+  </div>
+
+  <div class="caja-formulario-cancelacion tarjeta">
+
+    <div class="indicador-pasos">
+      <div class="paso activo">
+        <div class="paso-numero">1</div>
+        <span class="paso-texto">Motivo</span>
+      </div>
+      <div class="paso">
+        <div class="paso-numero">2</div>
+        <span class="paso-texto">Confirmación</span>
+      </div>
+    </div>
+
+    <form id="form-cancelacion">
+
+      <div id="seccion-paso-1" class="seccion-paso-formulario">
+        <h3 style="font-size:16px; font-weight:700; margin-bottom:15px;">Cuéntanos el motivo de tu cancelación</h3>
+        <p style="color: var(--gris-texto-secundario); font-size:14px; margin-bottom:20px;">Tu opinión es muy importante para nosotros y nos ayuda a mejorar la calidad de nuestro servicio de internet.</p>
+
+        <div class="grupo-formulario">
+          <label for="cancelacion-motivo">Motivo de cancelación</label>
+          <select id="cancelacion-motivo" class="control-formulario" required>
+            <option value="" disabled selected>Selecciona el motivo de tu baja</option>
+            <option value="Problemas técnicos continuos">Problemas técnicos continuos con la velocidad o estabilidad</option>
+            <option value="Mudanza a zona sin cobertura">Mudanza a una dirección sin cobertura de WIN</option>
+            <option value="Limitaciones económicas">Limitaciones económicas / Presupuesto personal</option>
+            <option value="Mejor oferta de otra compañía">Recibí una mejor oferta / menor precio de otra compañía</option>
+            <option value="Falta de uso del servicio">No uso el servicio lo suficiente</option>
+            <option value="Otro motivo">Otro motivo (especificar en comentarios)</option>
+          </select>
+        </div>
+
+        <div class="grupo-formulario" style="margin-top: 20px;">
+          <label for="cancelacion-comentarios">Comentarios adicionales (opcional)</label>
+          <textarea id="cancelacion-comentarios" class="control-formulario" rows="4" placeholder="Escribe aquí tus comentarios o sugerencias sobre el servicio..."></textarea>
+        </div>
+
+        <div class="grupo-formulario" style="max-width: 250px; margin-top: 20px;">
+          <label for="cancelacion-fecha">Fecha de solicitud</label>
+          <input type="text" id="cancelacion-fecha" class="control-formulario" value="<%= fechaHoy %>" readonly style="background-color: var(--gris-fondo); cursor: not-allowed; font-weight: 600;">
+        </div>
+
+        <div class="alerta alerta-naranja" style="margin-top: 20px;">
+          <svg class="alerta-icono" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          <div>
+            <strong>Tiempo máximo de atención: 24 horas hábiles.</strong><br>
+            Te notificaremos por correo electrónico y WhatsApp sobre la resolución de tu solicitud en cada etapa del proceso de baja.
+          </div>
+        </div>
+
+        <div class="acciones-formulario" style="margin-top: 20px; border-top: 1px solid var(--gris-borde); padding-top: 20px;">
+          <button type="button" id="btn-cancelar-formulario" class="btn btn-secundario">Cancelar</button>
+          <button type="button" id="btn-siguiente-paso" class="btn btn-primario">Siguiente paso</button>
+        </div>
+      </div>
+
+      <div id="seccion-paso-2" class="seccion-paso-formulario" style="display: none;">
+        <h3 style="font-size:16px; font-weight:700; margin-bottom:15px;">Confirmación de Solicitud</h3>
+        <p style="color: var(--gris-texto-secundario); font-size:14px; margin-bottom:20px;">Por favor, revisa detalladamente la información de tu solicitud de cancelación antes de proceder.</p>
+
+        <div class="detalles-confirmacion" style="margin-bottom: 20px; background-color: var(--gris-fondo); padding: 20px; border-radius: var(--radio-borde-mediano);">
+          <div class="fila-detalle" style="margin-bottom: 12px; border-bottom: 1px solid rgba(0, 0, 0, 0.04); padding-bottom: 8px;">
+            <div class="detalle-etiqueta">Motivo de Cancelación:</div>
+            <div id="resumen-motivo" class="detalle-valor" style="font-weight: 700; color: var(--naranja-primario);">-</div>
+          </div>
+          <div class="fila-detalle" style="margin-bottom: 12px; border-bottom: 1px solid rgba(0, 0, 0, 0.04); padding-bottom: 8px;">
+            <div class="detalle-etiqueta">Comentarios Adicionales:</div>
+            <div id="resumen-comentarios" class="detalle-valor" style="font-style: italic; font-weight: 500;">-</div>
+          </div>
+          <div class="fila-detalle" style="margin-bottom: 12px; border-bottom: 1px solid rgba(0, 0, 0, 0.04); padding-bottom: 8px;">
+            <div class="detalle-etiqueta">Fecha Programada para Baja:</div>
+            <div id="resumen-fecha" class="detalle-valor" style="font-weight: 700;">-</div>
+          </div>
+          <div class="fila-detalle">
+            <div class="detalle-etiqueta">Costo de Recibo Final Estimado:</div>
+            <div class="detalle-valor" style="color: var(--color-exito); font-weight: 700;">Próximo recibo prorrateado al día de hoy</div>
+          </div>
+        </div>
+
+        <div class="alerta alerta-advertencia" style="margin-top: 20px; margin-bottom: 20px;">
+          <svg class="alerta-icono" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          <div>
+            <strong>¡Importante! Proceso irreversible.</strong><br>
+            Una vez confirmada la solicitud, el proceso técnico de suspensión del servicio de internet de WIN comenzará a ejecutarse y se detendrá la facturación del plan mensual regular.
+          </div>
+        </div>
+
+        <div class="acciones-formulario" style="margin-top: 20px; border-top: 1px solid var(--gris-borde); padding-top: 20px;">
+          <button type="button" id="btn-atras-paso" class="btn btn-secundario">Atrás</button>
+          <button type="submit" class="btn btn-primario">Confirmar y Enviar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

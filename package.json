@@ -1,0 +1,26 @@
+{
+  "name": "portal-cancelacion-win",
+  "version": "1.0.0",
+  "description": "Prototipo para la mejora del proceso de cancelacion del servicio en WIN Internet",
+  "main": "servidor.js",
+  "type": "module",
+  "scripts": {
+    "start": "node servidor.js",
+    "dev": "nodemon servidor.js",
+    "sembrar": "node sembrar.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.4.2",
+    "ejs": "^6.0.1",
+    "express": "^4.19.2",
+    "mysql2": "^3.22.6",
+    "pdfkit": "^0.15.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

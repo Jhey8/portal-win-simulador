@@ -1,0 +1,83 @@
+.ui-toasts {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 360px;
+}
+
+.ui-toast {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--blanco, #fff);
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+  border-left: 4px solid var(--gris-texto-deshabilitado, #999);
+  color: var(--gris-texto-principal, #2c2c2c);
+  font-size: 14px;
+  cursor: pointer;
+  transform: translateX(120%);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+}
+.ui-toast.visible { transform: translateX(0); opacity: 1; }
+.ui-toast-icono { flex-shrink: 0; display: flex; }
+.ui-toast-icono svg { width: 22px; height: 22px; display: block; }
+.ui-toast-msg { line-height: 1.35; font-weight: 500; }
+
+.ui-toast-exito { border-left-color: var(--color-exito, #2E7D32); }
+.ui-toast-exito .ui-toast-icono svg { fill: var(--color-exito, #2E7D32); }
+.ui-toast-error { border-left-color: var(--color-advertencia, #D32F2F); }
+.ui-toast-error .ui-toast-icono svg { fill: var(--color-advertencia, #D32F2F); }
+.ui-toast-advertencia { border-left-color: var(--naranja-primario, #FF5A00); }
+.ui-toast-advertencia .ui-toast-icono svg { fill: var(--naranja-primario, #FF5A00); }
+.ui-toast-info { border-left-color: var(--color-info, #0288D1); }
+.ui-toast-info .ui-toast-icono svg { fill: var(--color-info, #0288D1); }
+
+.ui-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.ui-modal-overlay.visible { opacity: 1; }
+
+.ui-modal {
+  background: var(--blanco, #fff);
+  border-radius: 16px;
+  padding: 28px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  transform: scale(0.95);
+  transition: transform 0.2s;
+}
+.ui-modal-overlay.visible .ui-modal { transform: scale(1); }
+.ui-modal-titulo { font-size: 17px; font-weight: 800; margin-bottom: 8px; color: var(--gris-texto-principal, #2c2c2c); }
+.ui-modal-msg { font-size: 14px; line-height: 1.5; color: var(--gris-texto-secundario, #555); margin-bottom: 24px; }
+.ui-modal-acciones { display: flex; gap: 12px; justify-content: flex-end; }
+.ui-modal-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+.ui-modal-btn:hover { filter: brightness(0.95); }
+.ui-modal-cancelar { background: var(--gris-fondo, #f0f0f0); color: var(--gris-texto-secundario, #555); }
+.ui-modal-confirmar { background: var(--naranja-primario, #FF5A00); color: #fff; }
+.ui-modal-confirmar.peligro { background: var(--color-advertencia, #D32F2F); }

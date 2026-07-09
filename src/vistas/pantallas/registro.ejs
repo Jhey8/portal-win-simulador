@@ -1,0 +1,63 @@
+<section id="registro" class="vista-pantalla">
+  <div class="pantalla-login">
+    <div class="login-banner">
+      <div class="sidebar-logo" style="margin-bottom:0;">
+        win <span style="color:rgba(255,255,255,0.7)">INTERNET</span>
+      </div>
+      <div class="login-banner-contenido">
+        <h1>Únete a WIN Internet</h1>
+        <p>Crea tu cuenta para gestionar tus servicios, pagos y solicitudes desde un solo lugar, 100% en línea.</p>
+      </div>
+      <div class="login-banner-grafico">
+        <div class="grafico-circulo-decorativo"></div>
+        <img src="/imagenes/pareja_banner.png" alt="Pareja usando internet de WIN" style="width: 80%; max-width: 300px; border-radius: var(--radio-borde-mediano); box-shadow: 0 10px 30px rgba(0,0,0,0.15); z-index: 5;">
+      </div>
+      <div class="login-banner-decoracion-patron"></div>
+    </div>
+    <div class="login-formulario-seccion">
+      <div class="login-caja">
+        <h2>Crear cuenta</h2>
+        <p class="login-subtitulo">Completa tus datos para registrarte</p>
+
+        <div id="error-registro" class="alerta alerta-advertencia" style="display: none; margin-bottom: 20px;"></div>
+
+        <form id="form-registro" class="login-formulario">
+          <div class="grupo-formulario">
+            <label for="registro-nombre">Nombre completo</label>
+            <input type="text" id="registro-nombre" class="control-formulario" placeholder="Ej. Juan Pérez" required>
+          </div>
+          <div class="grupo-formulario" style="margin-top:14px;">
+            <label for="registro-numero-cliente">Número de cliente</label>
+            <input type="text" id="registro-numero-cliente" class="control-formulario" placeholder="Entre 6 y 12 dígitos" required inputmode="numeric">
+          </div>
+          <div class="grupo-formulario" style="margin-top:14px;">
+            <label for="registro-dni">DNI</label>
+            <input type="text" id="registro-dni" class="control-formulario" placeholder="Tu documento de identidad" required>
+          </div>
+          <div class="grupo-formulario" style="margin-top:14px;">
+            <label for="registro-correo">Correo electrónico</label>
+            <input type="email" id="registro-correo" class="control-formulario" placeholder="tucorreo@ejemplo.com">
+          </div>
+          <div class="grupo-formulario" style="margin-top:14px;">
+            <label for="registro-telefono">Teléfono</label>
+            <input type="text" id="registro-telefono" class="control-formulario" placeholder="+51 9XX XXX XXX">
+          </div>
+          <div class="grupo-formulario" style="margin-top:14px;">
+            <label for="registro-contrasena">Contraseña</label>
+            <input type="password" id="registro-contrasena" class="control-formulario" placeholder="Mínimo 6 caracteres" required>
+          </div>
+          <div class="grupo-formulario" style="margin-top:14px;">
+            <label for="registro-contrasena2">Confirmar contraseña</label>
+            <input type="password" id="registro-contrasena2" class="control-formulario" placeholder="Repite tu contraseña" required>
+          </div>
+
+          <button type="submit" class="btn btn-primario" style="margin-top: 20px; height: 50px; width:100%;">Crear cuenta</button>
+        </form>
+
+        <div class="login-enlaces-bajos" style="margin-top:18px;">
+          ¿Ya tienes cuenta? <a href="#" id="ir-a-login" class="btn-enlace">Inicia sesión</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

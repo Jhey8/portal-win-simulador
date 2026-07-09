@@ -1,0 +1,45 @@
+<section id="recibos" class="vista-pantalla">
+  <div class="cabecera-con-retorno">
+    <button class="btn-retorno" title="Volver al menú principal">
+      <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    </button>
+    <h2 class="seccion-titulo" style="margin-bottom:0;">Mis recibos</h2>
+  </div>
+
+  <div class="tarjeta" style="padding:0; overflow:hidden;">
+    <table class="tabla-simple">
+      <thead>
+        <tr>
+          <th>Periodo</th>
+          <th>Vencimiento</th>
+          <th>Monto</th>
+          <th>Estado</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Julio 2026</strong></td>
+          <td>10/08/2026</td>
+          <td>S/ 79.00</td>
+          <td><span class="etiqueta-estado en-proceso">Pendiente</span></td>
+          <td><a href="#" class="btn-enlace" onclick="notificar('Descarga de recibo simulada.', 'info'); return false;">Descargar</a></td>
+        </tr>
+        <tr>
+          <td><strong>Junio 2026</strong></td>
+          <td>10/07/2026</td>
+          <td>S/ 79.00</td>
+          <td><span class="etiqueta-estado completado">Pagado</span></td>
+          <td><a href="#" class="btn-enlace" onclick="notificar('Descarga de recibo simulada.', 'info'); return false;">Descargar</a></td>
+        </tr>
+        <tr>
+          <td><strong>Mayo 2026</strong></td>
+          <td>10/06/2026</td>
+          <td>S/ 79.00</td>
+          <td><span class="etiqueta-estado completado">Pagado</span></td>
+          <td><a href="#" class="btn-enlace" onclick="notificar('Descarga de recibo simulada.', 'info'); return false;">Descargar</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
