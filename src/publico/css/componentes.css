@@ -141,6 +141,11 @@
 .tabla-simple tr:last-child td { border-bottom: none; }
 .tabla-simple tbody tr:hover { background: var(--gris-fondo); }
 
+.control-formulario.campo-invalido {
+  border-color: var(--color-advertencia) !important;
+  background-color: var(--color-advertencia-fondo);
+}
+
 .alerta {
   display: flex;
   gap: 15px;

@@ -50,6 +50,7 @@ class AplicacionPortal {
     if (this.formularioRegistro) {
       this.formularioRegistro.addEventListener('submit', (e) => this.ejecutarRegistro(e));
     }
+    this.configurarCamposNumericos();
 
     if (this.botonCerrarSesion) {
       this.botonCerrarSesion.addEventListener('click', (e) => {
@@ -244,6 +245,28 @@ class AplicacionPortal {
     this.errorRegistro.style.display = 'block';
   }
 
+  marcarCampoInvalido(id, mensaje) {
+    const campo = document.getElementById(id);
+    if (campo) {
+      campo.classList.add('campo-invalido');
+      campo.focus();
+    }
+    this.mostrarErrorRegistro(mensaje);
+  }
+
+  configurarCamposNumericos() {
+    document.querySelectorAll('.campo-numerico, #login-numero-cliente').forEach(campo => {
+      campo.addEventListener('input', () => {
+        const limpio = campo.value.replace(/\D/g, '');
+        if (campo.value !== limpio) campo.value = limpio;
+        campo.classList.remove('campo-invalido');
+      });
+    });
+    document.querySelectorAll('#registro-nombre, #registro-correo, #registro-contrasena, #registro-contrasena2').forEach(campo => {
+      campo.addEventListener('input', () => campo.classList.remove('campo-invalido'));
+    });
+  }
+
   async ejecutarRegistro(e) {
     e.preventDefault();
     if (this.errorRegistro) this.errorRegistro.style.display = 'none';
@@ -262,13 +285,23 @@ class AplicacionPortal {
       this.mostrarErrorRegistro('Por favor completa los campos obligatorios.');
       return;
     }
+    if (!/^\d{6,12}$/.test(datos.numeroCliente)) {
+      return this.marcarCampoInvalido('registro-numero-cliente', 'El número de cliente debe tener entre 6 y 12 dígitos.');
+    }
+    if (!/^\d{8}$/.test(datos.dni)) {
+      return this.marcarCampoInvalido('registro-dni', 'El DNI debe tener exactamente 8 dígitos.');
+    }
+    if (datos.telefono && !/^9\d{8}$/.test(datos.telefono)) {
+      return this.marcarCampoInvalido('registro-telefono', 'El teléfono debe tener 9 dígitos y empezar con 9.');
+    }
+    if (datos.correo && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(datos.correo)) {
+      return this.marcarCampoInvalido('registro-correo', 'Ingresa un correo electrónico válido.');
+    }
     if (datos.contrasena.length < 6) {
-      this.mostrarErrorRegistro('La contraseña debe tener al menos 6 caracteres.');
-      return;
+      return this.marcarCampoInvalido('registro-contrasena', 'La contraseña debe tener al menos 6 caracteres.');
     }
     if (datos.contrasena !== contrasena2) {
-      this.mostrarErrorRegistro('Las contraseñas no coinciden.');
-      return;
+      return this.marcarCampoInvalido('registro-contrasena2', 'Las contraseñas no coinciden.');
     }
 
     try {

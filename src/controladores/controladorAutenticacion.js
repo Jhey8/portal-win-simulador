@@ -58,6 +58,15 @@ export const registrarCliente = async (peticion, respuesta) => {
   if (!/^\d{6,12}$/.test(numeroCliente)) {
     return respuesta.status(400).json({ exito: false, mensaje: 'El número de cliente debe tener entre 6 y 12 dígitos.' });
   }
+  if (!/^\d{8}$/.test(dni)) {
+    return respuesta.status(400).json({ exito: false, mensaje: 'El DNI debe tener exactamente 8 dígitos.' });
+  }
+  if (telefono && !/^9\d{8}$/.test(telefono)) {
+    return respuesta.status(400).json({ exito: false, mensaje: 'El teléfono debe tener 9 dígitos y empezar con 9.' });
+  }
+  if (correo && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) {
+    return respuesta.status(400).json({ exito: false, mensaje: 'Ingresa un correo electrónico válido.' });
+  }
   if (contrasena.length < 6) {
     return respuesta.status(400).json({ exito: false, mensaje: 'La contraseña debe tener al menos 6 caracteres.' });
   }
