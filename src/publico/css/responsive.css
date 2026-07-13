@@ -40,15 +40,30 @@
 }
 
 @media (max-width: 600px) {
-  #contenedor-aplicacion.autenticado #cabecera-portal { padding: 0 16px; height: 70px; }
+  #contenedor-aplicacion.autenticado #cabecera-portal { padding: 0 12px; height: 68px; gap: 8px; }
   #contenedor-aplicacion.autenticado #area-contenido { padding: 20px 16px; }
 
-  .saludo-usuario h2 { font-size: 16px; }
-  .saludo-usuario span { font-size: 12px; }
+  /* La zona del saludo puede encogerse y el nombre se recorta con "…" */
+  .cabecera-inicio { flex: 1 1 auto; min-width: 0; gap: 8px; }
+  .saludo-usuario { min-width: 0; }
+  .saludo-usuario h2 {
+    font-size: 15px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .saludo-usuario span {
+    font-size: 11px; display: block;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+
+  /* Acciones más compactas para que quepan */
+  .cabecera-acciones { gap: 10px; flex-shrink: 0; }
+  .cabecera-perfil { gap: 8px; }
+  .avatar-cliente { width: 36px; height: 36px; font-size: 13px; }
+  .cabecera-notificaciones { padding: 6px; }
+  .cabecera-notificaciones svg { width: 20px; height: 20px; }
+  .cabecera-perfil .btn-enlace { font-size: 12px; }
 
   .seccion-titulo { font-size: 20px; }
-
-  .cabecera-perfil .btn-enlace { font-size: 13px; }
 
   .acciones-formulario { flex-direction: column-reverse; gap: 10px; }
   .acciones-formulario .btn { width: 100%; }

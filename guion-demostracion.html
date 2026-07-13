@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía de Demostración · Portal WIN Internet</title>
+<style>
+  :root {
+    --bg: #FAF7F3;
+    --surface: #FFFFFF;
+    --ink: #241C17;
+    --muted: #6E635A;
+    --line: #ECE3DB;
+    --accent: #FF5A00;
+    --accent-2: #F34B00;
+    --accent-soft: #FFF0E6;
+    --good: #2E7D32;
+    --good-soft: #E8F5E9;
+    --warn: #B25000;
+    --warn-soft: #FDEEE2;
+    --radius: 14px;
+    --shadow: 0 1px 2px rgba(60,40,25,.04), 0 8px 24px rgba(60,40,25,.06);
+    --font: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  .pagina {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding: 40px 20px 80px;
+  }
+  .contenedor { max-width: 760px; margin: 0 auto; }
+
+  .marca {
+    display: flex; align-items: baseline; gap: 8px;
+    font-weight: 900; letter-spacing: -1px; font-size: 26px; color: var(--accent);
+  }
+  .marca small { font-size: 12px; font-weight: 600; letter-spacing: 2px; color: var(--muted); }
+  .titulo {
+    font-size: clamp(28px, 5vw, 40px); font-weight: 850; letter-spacing: -1px;
+    margin: 14px 0 6px; text-wrap: balance; line-height: 1.12;
+  }
+  .subtitulo { color: var(--muted); font-size: 17px; margin: 0 0 32px; max-width: 60ch; }
+
+  .bloque {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    box-shadow: var(--shadow); padding: 22px 24px; margin-bottom: 20px;
+  }
+  .etiqueta {
+    display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+  }
+  h2.seccion { font-size: 13px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin: 40px 4px 14px; }
+
+  .acceso { display: grid; gap: 4px; }
+  .acceso .url {
+    font-size: clamp(18px, 3.5vw, 24px); font-weight: 800; color: var(--accent);
+    word-break: break-all; text-decoration: none;
+  }
+  .acceso .nota { color: var(--muted); font-size: 14px; }
+
+  .cred-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 4px; }
+  @media (max-width: 520px) { .cred-grid { grid-template-columns: 1fr; } }
+  .cred {
+    border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; background: var(--bg);
+  }
+  .cred .rol { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); margin-bottom: 8px; }
+  .cred .rol.admin { color: var(--accent); }
+  .cred dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; }
+  .cred dt { color: var(--muted); font-size: 14px; }
+  .cred dd {
+    margin: 0; font-weight: 700; font-variant-numeric: tabular-nums;
+    font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: 15px;
+  }
+  .cred-nota { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.5; }
+  .cred-nota b { color: var(--ink); font-weight: 750; }
+
+  .check { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .check li { display: grid; grid-template-columns: 24px 1fr; gap: 12px; align-items: start; }
+  .check .box {
+    width: 20px; height: 20px; border: 2px solid var(--accent); border-radius: 6px; margin-top: 3px;
+  }
+  .check b { font-weight: 750; }
+
+  .escena { display: grid; grid-template-columns: 52px 1fr; gap: 18px; margin-bottom: 18px; align-items: start; }
+  .num {
+    width: 52px; height: 52px; border-radius: 13px; background: var(--accent); color: #fff;
+    display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 850;
+    box-shadow: 0 6px 16px rgba(255,90,0,.28);
+  }
+  .escena.admin .num { background: var(--ink); box-shadow: none; }
+  .escena .cuerpo { padding-top: 3px; }
+  .escena h3 { margin: 4px 0 4px; font-size: 19px; font-weight: 800; letter-spacing: -.2px; }
+  .escena .quien {
+    display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 20px;
+    background: var(--accent-soft); color: var(--accent-2); margin-bottom: 10px;
+  }
+  .escena.admin .quien { background: var(--good-soft); color: var(--good); }
+  ol.pasos { margin: 0; padding-left: 20px; display: grid; gap: 7px; }
+  ol.pasos li { padding-left: 4px; }
+  ol.pasos li::marker { color: var(--accent); font-weight: 700; }
+  kbd {
+    font-family: ui-monospace, Consolas, monospace; font-size: 13px; font-weight: 700;
+    background: var(--accent-soft); color: var(--accent-2); border-radius: 6px; padding: 1px 7px;
+    border: 1px solid var(--line);
+  }
+
+  .aviso {
+    display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: start;
+    border-left: 3px solid var(--accent); background: var(--warn-soft); color: var(--ink);
+    border-radius: 10px; padding: 14px 16px; margin-bottom: 14px; font-size: 15px;
+  }
+  .aviso .ico { color: var(--accent); font-weight: 900; font-size: 16px; line-height: 1.5; }
+  .aviso b { font-weight: 800; }
+
+  .pie { color: var(--muted); font-size: 13px; text-align: center; margin-top: 36px; }
+
+  @media print {
+    @page { margin: 14mm; }
+    .pagina { background: #fff; padding: 0; }
+    .bloque, .escena, .aviso, .cred { break-inside: avoid; }
+    .num, .escena.admin .num { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="pagina">
+  <div class="contenedor">
+
+    <div class="marca">win <small>INTERNET</small></div>
+    <h1 class="titulo">Guía de demostración del portal</h1>
+    <p class="subtitulo">Todo lo que necesitas para presentar el Portal de Autogestión de WIN en clase. Solo abre el link y sigue el guion.</p>
+
+    <div class="bloque">
+      <span class="etiqueta">Enlace de la web</span>
+      <div class="acceso">
+        <a class="url" href="https://portal-win-simulador.onrender.com">portal-win-simulador.onrender.com</a>
+        <span class="nota">Ábrelo en cualquier computadora con internet — no hay que instalar nada.</span>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <span class="etiqueta">Datos de acceso</span>
+      <div class="cred-grid">
+        <div class="cred">
+          <div class="rol">Cliente</div>
+          <p class="cred-nota">Cada persona <b>crea su cuenta</b> con «Crear cuenta» e ingresa con <b>su propio</b> número de cliente y contraseña.</p>
+        </div>
+        <div class="cred">
+          <div class="rol admin">Asesor · /admin</div>
+          <dl>
+            <dt>Usuario</dt><dd>admin</dd>
+            <dt>Contraseña</dt><dd>admin2026</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="seccion">Antes de presentar</h2>
+    <div class="bloque">
+      <ul class="check">
+        <li><span class="box"></span><span><b>Abre el link 2 minutos antes.</b> La primera carga puede tardar ~40 segundos porque el servidor «despierta». Después va rápido.</span></li>
+        <li><span class="box"></span><span><b>Déjalo en la pantalla de inicio de sesión</b>, listo para empezar.</span></li>
+      </ul>
+    </div>
+
+    <h2 class="seccion">El guion · 3 escenas</h2>
+
+    <div class="bloque">
+      <div class="escena">
+        <div class="num">1</div>
+        <div class="cuerpo">
+          <span class="quien">Como cliente</span>
+          <h3>El cliente solicita dar de baja su servicio</h3>
+          <ol class="pasos">
+            <li><b>Crea tu cuenta</b> con «Crear cuenta» (o inicia sesión si ya la tienes) e ingresa con tu número de cliente y contraseña.</li>
+            <li>Muestra el panel: los servicios activos y la <b>campana de notificaciones</b>.</li>
+            <li>Entra a la tarjeta naranja <b>«Solicitud de cancelación»</b>.</li>
+            <li><b>Paso 1:</b> elige un motivo (ej. «Mudanza a zona sin cobertura»), escribe un comentario y pulsa <b>Siguiente paso</b>.</li>
+            <li><b>Paso 2:</b> revisa el resumen y pulsa <b>Confirmar y Enviar</b>.</li>
+            <li>Aparece la confirmación con el <b>número de ticket</b>. Menciona que se le avisa por WhatsApp y correo.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <div class="escena admin">
+        <div class="num">2</div>
+        <div class="cuerpo">
+          <span class="quien">Como asesor de WIN</span>
+          <h3>El asesor atiende la solicitud</h3>
+          <ol class="pasos">
+            <li>Abre el panel del asesor: usa el enlace <b>«Acceso para asesores»</b> del login, o añade <kbd>/admin</kbd> a la URL.</li>
+            <li>Ingresa con <kbd>admin</kbd> / <kbd>admin2026</kbd>.</li>
+            <li>Verás la solicitud del cliente en la tabla. Cambia su estado y pulsa <b>Actualizar</b>, avanzando así:</li>
+            <li><kbd>En validación</kbd> → <kbd>En proceso</kbd> → <kbd>Cancelación completada</kbd>.</li>
+            <li>Explica: <b>cada cambio genera una notificación real</b> para el cliente.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <div class="escena">
+        <div class="num">3</div>
+        <div class="cuerpo">
+          <span class="quien">Como cliente</span>
+          <h3>El cliente ve el resultado y descarga su constancia</h3>
+          <ol class="pasos">
+            <li>Vuelve al portal del cliente y entra al <b>Menú principal</b> (se actualiza solo).</li>
+            <li>Abre la <b>campana 🔔</b>: aparecen las notificaciones del trámite.</li>
+            <li>Entra a la tarjeta de cancelación: ahora ofrece la <b>Constancia</b>.</li>
+            <li>Pulsa <b>«Descargar constancia (PDF)»</b> → se descarga el documento oficial de baja. ¡Fin del recorrido!</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="seccion">Para tener a mano</h2>
+
+    <div class="aviso">
+      <span class="ico">&#8635;</span>
+      <span><b>Volver a empezar la demo:</b> en el panel del asesor, pulsa <b>«Reiniciar»</b> en la fila del cliente y confirma. El cliente quedará libre para solicitar la baja de nuevo desde cero.</span>
+    </div>
+    <div class="aviso">
+      <span class="ico">!</span>
+      <span><b>Si carga lento o dice «error de conexión»:</b> espera ~40 s en la primera carga (el servidor está despertando). Si persiste, avisa a la persona encargada del sistema.</span>
+    </div>
+
+    <p class="pie">Portal de Autogestión de Cancelación · WIN Internet — Proyecto de demostración</p>
+
+  </div>
+</div>
+</body>
+</html>
