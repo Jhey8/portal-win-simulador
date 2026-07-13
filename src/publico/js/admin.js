@@ -82,8 +82,6 @@ const cerrarSesion = () => {
   panel.style.display = 'none';
   pantallaLogin.style.display = 'flex';
   formLogin.reset();
-  inputUsuario.value = 'admin';
-  inputContrasena.value = 'admin2026';
 };
 
 btnSalir.addEventListener('click', cerrarSesion);
